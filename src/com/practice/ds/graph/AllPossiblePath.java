@@ -3,13 +3,10 @@ package com.practice.ds.graph;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.Stack;
 
 public class AllPossiblePath {
 
@@ -17,11 +14,11 @@ public class AllPossiblePath {
   public static void main(String[] args) {
     try {
       Graph1 graph1 = new Graph1("g2.txt");
-      LNode1 ln = graph1.getGraph().get(0);
-      print(ln);
+     // LNode1 ln = graph1.getGraph().get(0);
+      //print(ln);
       System.out.println();
-      // System.out.println(allPossiblePath(graph1.getGraph(), 0, 4, 0));
-      bfsAllPath(graph1.getGraph(), 0, 3);
+       //System.out.println(allPossiblePath(graph1.getGraph(), 0, 4, 0));
+      //bfsAllPath(graph1.getGraph(), 0, 4);
 
     } catch (FileNotFoundException e) {
       e.printStackTrace();
@@ -79,8 +76,8 @@ class Graph1 {
     Scanner sc = new Scanner(new File(fileName));
     while (sc.hasNext()) {
       String[] s = sc.next().split(",");
-      int src = Integer.valueOf(s[0]);
-      int dest = Integer.valueOf(s[1]);
+      int src = Integer.parseInt(s[0]);
+      int dest = Integer.parseInt(s[1]);
       addEdge(src, dest);
     }
   }
