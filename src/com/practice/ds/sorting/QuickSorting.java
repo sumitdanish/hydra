@@ -14,29 +14,32 @@ public class QuickSorting {
 
   }
 
-  private static void quickSort(int[] a, int l, int r) {
-    if (l < r) {
-      int p = pivot(a, l, r);
-      quickSort(a, l, p - 1);
-      quickSort(a, p + 1, r);
+  private static void quickSort(int[] a,int l,int r){
+    if(l >=r){
+      return;
     }
+
+    int p = pivot(a,l,r);
+    quickSort(a,l,p-1);
+    quickSort(a,p+1,r);
   }
 
-  private static int pivot(int[] a, int l, int r) {
-    int p = a[r];
-    int i = l;
-    int j = l;
-    for (; j < r; j++) {
-      if (p > a[j]) {
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
-        i++;
+  private static int pivot(int[] a,int left,int right){
+    int p =a[right];
+    int l = left;
+    int l1 = left;
+    for(;l1<right;l1++){
+      if(p > a[l1]){
+        int temp = a[l1];
+        a[l1] = a[l];
+        a[l] = temp;
+        l++;
       }
     }
-    int t = a[i];
-    a[i] = a[r];
-    a[r] = t;
-    return i;
+
+    int temp = a[right];
+    a[right] = a[l];
+    a[l] = temp;
+    return l;
   }
 }
