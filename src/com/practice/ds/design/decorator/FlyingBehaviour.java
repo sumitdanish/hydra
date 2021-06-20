@@ -1,4 +1,4 @@
-package com.practice.ds.design;
+package com.practice.ds.design.decorator;
 
 public interface FlyingBehaviour {
 

@@ -1,4 +1,4 @@
-package com.practice.ds.design;
+package com.practice.ds.design.decorator;
 
 public class NaturalQuack implements QuackBehaviour {
 
